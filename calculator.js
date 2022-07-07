@@ -33,3 +33,8 @@ divide = (a, b) => {
     return 'You must select an number'
   }
 }
+
+// operate function takes an operator and 2 numbers then calls one of the above function on the numbers.
+operate = ( operator, a, b) => {
+  
+}
