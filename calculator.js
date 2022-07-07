@@ -1,3 +1,4 @@
+// This function adds two numbers
 add = (a, b) => {
   if (Number.isInteger(a) === true && Number.isInteger(b) === true) {
     return a + b;
@@ -6,6 +7,7 @@ add = (a, b) => {
   }
 }
 
+// This function subtracts two numbers
 subtract = (a, b) => {
   if (Number.isInteger(a) === true && Number.isInteger(b) === true) {
     return a - b;
@@ -14,6 +16,7 @@ subtract = (a, b) => {
   }
 }
 
+// This function multiply two numbers
 multiply = (a, b) => {
   if (Number.isInteger(a) === true && Number.isInteger(b) === true) {
     return a * b;
@@ -22,6 +25,7 @@ multiply = (a, b) => {
   }
 }
 
+// This function divides two numbers
 divide = (a, b) => {
   if (Number.isInteger(a) === true && Number.isInteger(b) === true) {
     return a / b;
