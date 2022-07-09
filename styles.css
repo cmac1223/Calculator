@@ -1,0 +1,92 @@
+#container {
+  /* display: flex; */
+  /* justify-content: center; */
+  margin: auto;
+  height: 650px;
+  width: 650px;
+  outline: solid;
+}
+
+#calculator-container {
+  display: grid;
+  position: relative;
+  gap: 1.5rem;
+  /* margin: 1.5rem; */
+  grid-template-columns: repeat(4, 1fr);
+  background-color: black;
+}
+
+#display-container {
+  outline: solid;
+  background-color: black;
+  grid-column: span 4;
+}
+
+button {
+  /* height: fit-content; */
+  background-color: #4CAF50;
+  /* Green */
+  border: none;
+  color: white;
+  padding: 20px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 16px;
+  margin: 4px 2px;
+  cursor: pointer;
+  border-radius: 20%;
+}
+
+/* button {border-radius: 30%;} */
+
+.numbers, #decimal {
+  background-color: rgb(88, 88, 88);
+}
+
+.operators, #operate {
+  background-color: rgb(227, 152, 13);
+}
+
+#clear {
+  background-color: rgb(199, 198, 198);
+  grid-column: span 2;
+}
+
+/* Positioning numbers top row */
+.n7 {
+  grid-column: 1;
+  grid-row: 3;
+}
+
+.n8{
+  grid-column: 2;
+  grid-row: 3;
+}
+
+.n9{
+  grid-column: 3;
+  grid-row: 3;
+}
+
+/* Positioning numbers middle row */
+.n4{
+  grid-column: 1;
+  grid-row: 4;
+}
+
+.n5{
+  grid-column: 2;
+  grid-row: 4;
+}
+
+.n6 {
+  grid-column: 3;
+  grid-row: 4;
+}
+
+/* Positioning numbers bottom row */
+.n1{
+  grid-column: 1;
+  grid-row: 5;
+}
