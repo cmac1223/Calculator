@@ -40,5 +40,26 @@ operate = (operator, a, b) => {
     : operator === subtract ? subtract(a, b)
       : operator === multiply ? multiply(a, b)
         : operator === divide ? divide(a, b)
-        : 'You must select an two numbers and operator'        
+          : 'You must select an two numbers and operator'
 }
+
+// function returns number value
+displayValue = (e) => {
+  // debugger;
+  const displayContainer = document.getElementById('display-container')
+  let integer = parseInt(e.target.innerText);
+
+  if (Number.isInteger(integer)) {
+    displayContainer.innerText += integer;
+    
+  }
+}
+
+// target buttons by class 
+// add eventlistener 
+// run function that populates number
+
+const numbers = document.querySelectorAll('.numbers');
+numbers.forEach((number => {
+  number.addEventListener('click', displayValue)
+}))
