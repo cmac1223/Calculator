@@ -43,6 +43,9 @@ operate = (operator, a, b) => {
           : 'You must select an two numbers and operator'
 }
 
+// storing value inside array
+const valueArray = [];
+
 // function returns number value
 displayValue = (e) => {
   // debugger;
@@ -50,14 +53,15 @@ displayValue = (e) => {
   let integer = parseInt(e.target.innerText);
 
   if (Number.isInteger(integer)) {
-    displayContainer.innerText += integer;
-    
+    valueArray.push(displayContainer.innerText += integer);
+
   }
 }
 
 // target buttons by class 
 // add eventlistener 
 // run function that populates number
+// store display value somewhere
 
 const numbers = document.querySelectorAll('.numbers');
 numbers.forEach((number => {
