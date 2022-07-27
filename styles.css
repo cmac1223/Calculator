@@ -3,7 +3,7 @@
   /* justify-content: center; */
   margin: auto;
   height: 600px;
-  width: 650px;
+  width: 450px;
   outline: solid;
 }
 
@@ -41,7 +41,7 @@ button {
   font-size: 16px;
   margin: 4px 2px;
   cursor: pointer;
-  border-radius: 40%;
+  border-radius: 45%;
 }
 
 /* button {border-radius: 30%;} */
