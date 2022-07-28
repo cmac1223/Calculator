@@ -44,7 +44,10 @@ operate = (a, operator, b) => {
 }
 
 // storing value inside array
-const valueArray = [];
+// const valueArray = [];
+
+let valueArray = '';
+let valueObject = {};
 
 // function returns number value
 displayValue = (e) => {
@@ -53,8 +56,19 @@ displayValue = (e) => {
   let integer = parseInt(e.target.innerText);
 
   if (Number.isInteger(integer)) {
-    valueArray.push(displayContainer.innerText += integer);
+    // valueArray.push(displayContainer.innerText += integer);
 
+     valueArray += integer;
+     displayContainer.innerText = valueArray;
+
+
+  }
+  valueObject.value = valueArray;
+}
+
+blah = (e) => {
+  if (e.target.innerText === '*') {
+    console.log('multiplication')
   }
 }
 
@@ -66,4 +80,9 @@ displayValue = (e) => {
 const numbers = document.querySelectorAll('.numbers');
 numbers.forEach((number => {
   number.addEventListener('click', displayValue)
+}))
+
+const operators = document.querySelectorAll('.operators');
+operators.forEach((operator => {
+  operator.addEventListener('click', blah)
 }))
