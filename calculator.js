@@ -46,8 +46,9 @@ operate = (a, operator, b) => {
 // storing value inside array
 // const valueArray = [];
 
-let valueArray = '';
-let valueObject = {};
+let valueArray = [];
+// let valueArray = '';
+// let valueObj = {};
 
 // function returns number value
 displayValue = (e) => {
@@ -57,15 +58,26 @@ displayValue = (e) => {
 
   if (Number.isInteger(integer)) {
     // valueArray.push(displayContainer.innerText += integer);
+    valueArray[0] = (displayContainer.innerText += integer);
+    console.log(valueArray)
 
-     valueArray += integer;
-     displayContainer.innerText = valueArray;
+    // valueArray += integer;
+    // displayContainer.innerText = valueArray;
 
 
   }
-  valueObject.value = valueArray;
+  // valueObj.value = valueArray;
+
+  // Storing object in localStorage for later use
+  // let valueObj_serialized = JSON.stringify(valueObj);
+  // localStorage.setItem("value_1", valueObj_serialized);
+  // console.log(localStorage);
+
 }
 
+
+
+// operator function?
 blah = (e) => {
   if (e.target.innerText === '*') {
     console.log('multiplication')
@@ -86,3 +98,4 @@ const operators = document.querySelectorAll('.operators');
 operators.forEach((operator => {
   operator.addEventListener('click', blah)
 }))
+
