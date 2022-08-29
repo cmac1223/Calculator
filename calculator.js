@@ -50,28 +50,22 @@ let valueArray = [];
 // let valueArray = '';
 // let valueObj = {};
 
+const displayContainer = document.getElementById('display-container')
 // function returns number value
-displayValue = (e) => {
+displayNumber = (e) => {
   // debugger;
-  const displayContainer = document.getElementById('display-container')
   let integer = parseInt(e.target.innerText);
 
   if (Number.isInteger(integer)) {
-    // valueArray.push(displayContainer.innerText += integer);
     valueArray[0] = (displayContainer.innerText += integer);
     console.log(valueArray)
-
-    // valueArray += integer;
-    // displayContainer.innerText = valueArray;
-
-
   }
-  // valueObj.value = valueArray;
 
-  // Storing object in localStorage for later use
-  // let valueObj_serialized = JSON.stringify(valueObj);
-  // localStorage.setItem("value_1", valueObj_serialized);
-  // console.log(localStorage);
+}
+
+displayOperator = (e) => { 
+  let operator = e.target.innerText;
+  valueArray[0] = (displayContainer.innerText += operator);
 
 }
 
@@ -91,11 +85,14 @@ blah = (e) => {
 
 const numbers = document.querySelectorAll('.numbers');
 numbers.forEach((number => {
-  number.addEventListener('click', displayValue)
+  number.addEventListener('click', displayNumber)
 }))
 
 const operators = document.querySelectorAll('.operators');
 operators.forEach((operator => {
-  operator.addEventListener('click', blah)
+  operator.addEventListener('click', displayOperator)
 }))
 
+// add everything to storage array
+// split storage array on operator to create values 1&2
+// run operate with values 1, 2, & operator
