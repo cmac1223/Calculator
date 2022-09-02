@@ -63,7 +63,7 @@ displayNumber = (e) => {
 
 }
 
-displayOperator = (e) => { 
+displayOperator = (e) => {
   let operator = e.target.innerText;
   valueArray[0] = (displayContainer.innerText += operator);
 
@@ -78,8 +78,8 @@ blah = (e) => {
   }
 }
 
-// target buttons by class 
-// add eventlistener 
+// target buttons by class
+// add eventlistener
 // run function that populates number
 // store display value somewhere
 
