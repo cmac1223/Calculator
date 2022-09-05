@@ -6,6 +6,8 @@ const display = document.querySelector('.calculator__display');
 keys.addEventListener('click', e =>{
   if (e.target.matches('button')){
     const key = e.target;
-    console.log(key);
+
+    //create a variable that target the data-action attribute.
+    const action = key.dataset.action;
   }
 })
