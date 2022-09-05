@@ -9,5 +9,10 @@ keys.addEventListener('click', e =>{
 
     //create a variable that target the data-action attribute.
     const action = key.dataset.action;
+    console.log(action);
+
+    // get textContent from clicked button
+    const keyContent = key.textContent;
+    console.log(keyContent + ">>++++<>")
   }
 })
