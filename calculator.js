@@ -3,8 +3,9 @@ const keys = calculator.querySelector('.calculator__keys');
 const display = document.querySelector('.calculator__display');
 
 // function fires when button is click
-keys.addEventListener('click', e =>{
-  if (e.target.matches('button')){
+keys.addEventListener('click', e => {
+  debugger;
+  if (e.target.matches('button')) {
     const key = e.target;
 
     //create a variable that target the data-action attribute.
@@ -16,8 +17,11 @@ keys.addEventListener('click', e =>{
     // get display value
     const displayedNum = display.textContent;
 
-    if(!action){
-      console.log('Number')
+    if (!action) {
+      if (displayedNum === '0'
+      ) {
+        display.textContent = keyContent;
+      }
     }
   }
 })
