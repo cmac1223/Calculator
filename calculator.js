@@ -15,6 +15,9 @@ keys.addEventListener('click', e =>{
 
     // get display value
     const displayedNum = display.textContent;
-    console.log(displayedNum);
+
+    if(!action){
+      console.log('Number')
+    }
   }
 })
