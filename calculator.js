@@ -17,11 +17,26 @@ keys.addEventListener('click', e => {
     // get display value
     const displayedNum = display.textContent;
 
+    // Define previousKeyType
+    const previousKeyType = calculator.dataset.previousKeyType;
+
     if (!action) {
       if (displayedNum === '0'
       ) {
         display.textContent = keyContent;
+      } else {
+        display.textContent = `${displayedNum}${keyContent}`
       }
+      calculator.dataset.previousKeyType = 'number';
+    }
+
+    if (
+      action === 'add' ||
+      action === 'subtract' ||
+      action === 'multiply' ||
+      action === 'divide'
+    ) {
+
     }
   }
 })
