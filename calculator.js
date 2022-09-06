@@ -4,7 +4,7 @@ const display = document.querySelector('.calculator__display');
 
 // function fires when button is click
 keys.addEventListener('click', e => {
-  debugger;
+  // debugger;
   if (e.target.matches('button')) {
     const key = e.target;
 
@@ -36,7 +36,7 @@ keys.addEventListener('click', e => {
       action === 'multiply' ||
       action === 'divide'
     ) {
-
+      console.log('operator');
     }
   }
 })
