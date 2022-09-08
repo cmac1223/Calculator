@@ -44,11 +44,22 @@ keys.addEventListener('click', e => {
 
       // assign the second value as displayedNum value
       const secondValue = displayedNum;
+
+      // add custom attribute
+      calculator.dataset.previousKeyType = 'operator';
     }
 
     // When decimal key is click
     if (action === 'decimal') {
       console.log('decimal')
+    }
+
+    if (action === 'clear') {
+      console.log('clear');
+    }
+
+    if (action === 'calculate') {
+      console.log('calculate');
     }
   }
 })
