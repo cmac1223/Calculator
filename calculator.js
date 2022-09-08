@@ -4,7 +4,6 @@ const display = document.querySelector('.calculator__display');
 
 // function fires when button is click
 keys.addEventListener('click', e => {
-  // debugger;
   if (e.target.matches('button')) {
     const key = e.target;
 
@@ -37,6 +36,19 @@ keys.addEventListener('click', e => {
       action === 'divide'
     ) {
       console.log('operator');
+      // store firstValue inside of custom attribute
+      const firstValue = calculator.dataset.firstValue;
+
+      // store operator inside of custom attribute
+      const operator = calculator.dataset.operator;
+
+      // assign the second value as displayedNum value
+      const secondValue = displayedNum;
+    }
+
+    // When decimal key is click
+    if (action === 'decimal') {
+      console.log('decimal')
     }
   }
 })
