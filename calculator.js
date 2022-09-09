@@ -52,14 +52,17 @@ keys.addEventListener('click', e => {
     // When decimal key is click
     if (action === 'decimal') {
       console.log('decimal')
+      calculator.dataset.previousKeyType = 'decimal'
     }
 
     if (action === 'clear') {
       console.log('clear');
+      calculator.dataset.previousKeyType = 'clear'
     }
-
+    // when equal sign is click
     if (action === 'calculate') {
       console.log('calculate');
+      calculator.dataset.previousKeyType = 'calculate';
     }
   }
 })
