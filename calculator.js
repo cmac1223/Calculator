@@ -22,7 +22,7 @@ const calculate = (n1, operator, n2) => {
 
 // function fires when button is click
 keys.addEventListener('click', e => {
-  debugger;
+  // debugger;
   if (e.target.matches('button')) {
     const key = e.target;
 
@@ -78,13 +78,26 @@ keys.addEventListener('click', e => {
 
     // When decimal key is click
     if (action === 'decimal') {
-      console.log('decimal')
-      calculator.dataset.previousKeyType = 'decimal'
+      if (previousKeyType === 'operator' ||
+        previousKeyType === 'calculate') {
+          display.textContent = '0.';
+        } else if (!displayedNum.includes('.')){
+          display.textContent =`${displayedNum}.`
+        }
+        calculator.dataset.previousKeyType = 'decimal'
     }
 
+    // When clear button is click
     if (action === 'clear') {
-      console.log('clear');
+      display.textContent = 0;
+      key.textContent = 'AC';
       calculator.dataset.previousKeyType = 'clear'
+    }
+
+    // Whenever clear button isn't click
+    if(action !== 'clear'){
+      const clearButton = calculator.querySelector('[data-action=clear]');
+      clearButton.textContent = 'CE';
     }
     // when equal sign is click
     if (action === 'calculate') {
