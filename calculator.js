@@ -56,7 +56,6 @@ keys.addEventListener('click', e => {
       action === 'multiply' ||
       action === 'divide'
     ) {
-      console.log('operator');
       // store firstValue inside of custom attribute
       const firstValue = calculator.dataset.firstValue;
 
@@ -65,6 +64,16 @@ keys.addEventListener('click', e => {
 
       // assign the second value as displayedNum value
       const secondValue = displayedNum;
+
+      if(
+        firstValue &&
+        operator &&
+        previousKeyType !== 'opertor' &&
+        previousKeyType !== 'calculate'
+      ){
+        console.log('calculate');
+
+      }
 
       // storing the first displayedNum as the firstValue
       calculator.dataset.firstValue = displayedNum;
