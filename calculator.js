@@ -68,7 +68,7 @@ keys.addEventListener('click', e => {
       if(
         firstValue &&
         operator &&
-        previousKeyType !== 'opertor' &&
+        previousKeyType !== 'operator' &&
         previousKeyType !== 'calculate'
       ){
         const calcValue = calculate(firstValue, operator, secondValue);
@@ -77,17 +77,19 @@ keys.addEventListener('click', e => {
         // Update calculated value as firstValue
         calculator.dataset.firstValue = calcValue;
 
+      } else {
+        // if no calculations, set displayNum as the firstValue
+        calculator.dataset.firstValue = displayedNum;
       }
-
-      // storing the first displayedNum as the firstValue
-      calculator.dataset.firstValue = displayedNum;
-
       //create operator custom attribute set to action
       calculator.dataset.operator = action;
-
       // add custom attribute
       calculator.dataset.previousKeyType = 'operator';
     }
+
+
+
+
 
     // When decimal key is click
     if (action === 'decimal') {
@@ -128,6 +130,8 @@ keys.addEventListener('click', e => {
 
         display.textContent = calculate(firstValue, operator, secondValue)
       }
+      // set modValue attribute
+      calculator.dataset.modValue = secondValue;
       calculator.dataset.previousKeyType = 'calculate';
     }
 
