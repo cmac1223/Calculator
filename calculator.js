@@ -71,7 +71,8 @@ keys.addEventListener('click', e => {
         previousKeyType !== 'opertor' &&
         previousKeyType !== 'calculate'
       ){
-        console.log('calculate');
+        const calcValue = calculate(firstValue, operator, secondValue);
+        display.textContent = calcValue;
 
       }
 
