@@ -74,6 +74,9 @@ keys.addEventListener('click', e => {
         const calcValue = calculate(firstValue, operator, secondValue);
         display.textContent = calcValue;
 
+        // Update calculated value as firstValue
+        calculator.dataset.firstValue = calcValue;
+
       }
 
       // storing the first displayedNum as the firstValue
