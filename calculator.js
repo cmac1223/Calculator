@@ -8,16 +8,23 @@ const calculate = (n1, operator, n2) => {
   let result = '';
 
   if (operator === 'add') {
-    result = parseFloat(n1) + parseFloat(n2)
+    result = (parseFloat(n1) + parseFloat(n2)).toFixed(2);
   } else if (operator === 'subtract') {
-    result = parseFloat(n1) - parseFloat(n2)
+    result = (parseFloat(n1) - parseFloat(n2)).toFixed(2);
   } else if (operator === 'multiply') {
-    result = parseFloat(n1) * parseFloat(n2)
+    result = (parseFloat(n1) * parseFloat(n2)).toFixed(2);
   } else if (operator === 'divide') {
-    result = parseFloat(n1) / parseFloat(n2)
+    result = (parseFloat(n1) / parseFloat(n2)).toFixed(2);
   }
   return result;
 }
+
+// const clearFunction = (f, s) => {
+//   result = {
+//     f: '0',
+//     s: '0'
+//   }
+// }
 
 
 // function fires when button is click
@@ -65,12 +72,12 @@ keys.addEventListener('click', e => {
       // assign the second value as displayedNum value
       const secondValue = displayedNum;
 
-      if(
+      if (
         firstValue &&
         operator &&
         previousKeyType !== 'operator' &&
         previousKeyType !== 'calculate'
-      ){
+      ) {
         const calcValue = calculate(firstValue, operator, secondValue);
         display.textContent = calcValue;
 
@@ -81,6 +88,15 @@ keys.addEventListener('click', e => {
         // if no calculations, set displayNum as the firstValue
         calculator.dataset.firstValue = displayedNum;
       }
+
+      // Displaying error message if divide by 0
+      if (firstValue &&
+        operator === 'divide' &&
+        secondValue === '0'
+      ) {
+        display.textContent = `Divide By ${secondValue} Error`
+      }
+
       //create operator custom attribute set to action
       calculator.dataset.operator = action;
       // add custom attribute
@@ -95,22 +111,34 @@ keys.addEventListener('click', e => {
     if (action === 'decimal') {
       if (previousKeyType === 'operator' ||
         previousKeyType === 'calculate') {
-          display.textContent = '0.';
-        } else if (!displayedNum.includes('.')){
-          display.textContent =`${displayedNum}.`
-        }
-        calculator.dataset.previousKeyType = 'decimal'
+        display.textContent = '0.';
+      } else if (!displayedNum.includes('.')) {
+        display.textContent = `${displayedNum}.`
+      }
+      calculator.dataset.previousKeyType = 'decimal'
     }
 
     // When clear button is click
-    if (action === 'clear') {
+    if (
+      action === 'clear'
+    ) {
+
+      // set first and second value to 0
+      calculator.dataset.firstValue = 0;
+      calculator.dataset.secondValue = 0;
+
+      // display 0
       display.textContent = 0;
+
+      // change clear button from 'CE' to 'AC'
       key.textContent = 'AC';
+
+      // set previousKeyType to clear
       calculator.dataset.previousKeyType = 'clear'
     }
 
     // Whenever clear button isn't click
-    if(action !== 'clear'){
+    if (action !== 'clear') {
       const clearButton = calculator.querySelector('[data-action=clear]');
       clearButton.textContent = 'CE';
     }
@@ -130,6 +158,16 @@ keys.addEventListener('click', e => {
 
         display.textContent = calculate(firstValue, operator, secondValue)
       }
+
+
+      // Displaying error message if divide by 0
+      if (firstValue &&
+        operator === 'divide' &&
+        secondValue === '0'
+      ) {
+        display.textContent = `Divide By ${secondValue} Error`
+      }
+
       // set modValue attribute
       calculator.dataset.modValue = secondValue;
       calculator.dataset.previousKeyType = 'calculate';
